@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -16,4 +18,7 @@ public class AuthenticationResponse {
     private String lastname;
     private String email;
     private String role;
+    private String address;
+    private String phoneNumber;
+    private Date dateOfBirth;
 }
