@@ -2,13 +2,12 @@ package com.cancerpatient.finalyearproject.auth.Notice;
 
 
 import com.cancerpatient.finalyearproject.user.notice.Notice;
-import com.cancerpatient.finalyearproject.user.notice.NoticeRepository;
+import com.cancerpatient.finalyearproject.repository.NoticeRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
