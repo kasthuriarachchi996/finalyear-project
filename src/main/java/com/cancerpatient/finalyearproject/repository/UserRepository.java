@@ -13,8 +13,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     Optional<User> findByEmail(String email);
 
-    Optional<User> findByEmailAndRolesIn(String email, Set<Role> roles);
-    @Query("SELECT u FROM User u JOIN u.roles r WHERE r = :roleName")
-    List<User> findUsersByRoleName(String roleName);
+//    Optional<User> findByEmailAndRolesIn(String email, Set<Role> roles);
+//    @Query("SELECT u FROM User u JOIN u.roles r WHERE r = :roleName")
+//    List<User> findUsersByRoleName(String roleName);
 
 }

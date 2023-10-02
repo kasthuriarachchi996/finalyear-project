@@ -53,20 +53,20 @@ public class AddMedicineService {
         }
     }
 
-    public AddMedicine reduceStock(PatientTreatment treatment) {
-        if (treatment != null) {
-            Optional<AddMedicine> medicineData = addMedicineRepository.findById(treatment.getMedicine().getId());
-            if (medicineData.isPresent()) {
-                AddMedicine existingMedicine = medicineData.get();
-
-                existingMedicine.setStock(existingMedicine.getStock() - treatment.getDosage());
-
-                return addMedicineRepository.save(existingMedicine);
-            } else {
-                throw new IllegalArgumentException("Medicine not found with id: " + treatment.getMedicine().getId());
-            }
-        }
-return null;
-    }
+//    public AddMedicine reduceStock(PatientTreatment treatment) {
+//        if (treatment != null) {
+//            Optional<AddMedicine> medicineData = addMedicineRepository.findById(treatment.getMedicine().getId());
+//            if (medicineData.isPresent()) {
+//                AddMedicine existingMedicine = medicineData.get();
+//
+//                existingMedicine.setStock(existingMedicine.getStock() - treatment.getDosage());
+//
+//                return addMedicineRepository.save(existingMedicine);
+//            } else {
+//                throw new IllegalArgumentException("Medicine not found with id: " + treatment.getMedicine().getId());
+//            }
+//        }
+//return null;
+//    }
 }
 

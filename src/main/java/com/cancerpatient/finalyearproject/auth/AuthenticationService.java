@@ -5,6 +5,8 @@ import com.cancerpatient.finalyearproject.repository.RoleRepository;
 import com.cancerpatient.finalyearproject.repository.UserRepository;
 import com.cancerpatient.finalyearproject.user.Role;
 import com.cancerpatient.finalyearproject.user.User;
+import com.cancerpatient.finalyearproject.user.addmedicine.AddMedicine;
+import com.cancerpatient.finalyearproject.user.treatment.PatientTreatment;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -79,4 +82,26 @@ public class AuthenticationService {
                 .token(jwtToken)
                 .build();
     }
+
+//    public User authenticate(PatientTreatment treatment)
+//    {
+//        Optional<User> medicineData = userRepository.findById(treatment.get);
+//        User existingMedicine = medicineData.get();
+//    }
+
+//    public User reduceStock(PatientTreatment treatment) {
+//        if (treatment != null) {
+//            Optional<AddMedicine> medicineData = addMedicineRepository.findById(treatment.getMedicine().getId());
+//            if (medicineData.isPresent()) {
+//                AddMedicine existingMedicine = medicineData.get();
+//
+//                existingMedicine.setStock(existingMedicine.getStock() - treatment.getDosage());
+//
+//                return addMedicineRepository.save(existingMedicine);
+//            } else {
+//                throw new IllegalArgumentException("Medicine not found with id: " + treatment.getMedicine().getId());
+//            }
+//        }
+//        return null;
+//    }
 }
